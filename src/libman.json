@@ -4,19 +4,23 @@
   "libraries": [
     {
       "library": "Chart.js@3.9.1",
-      "destination": "wwwroot/lib/Chart.js/"
+      "destination": "wwwroot/lib/Chart.js/",
+      "files": [ "chart.min.js" ]
     },
     {
       "library": "chartjs-plugin-zoom@1.2.1",
-      "destination": "wwwroot/lib/chartjs-plugin-zoom/"
+      "destination": "wwwroot/lib/chartjs-plugin-zoom/",
+      "files": [ "chartjs-plugin-zoom.min.js" ]
     },
     {
       "library": "hammer.js@2.0.8",
-      "destination": "wwwroot/lib/hammer.js/"
+      "destination": "wwwroot/lib/hammer.js/",
+      "files": [ "hammer.min.js" ]
     },
     {
       "library": "chartjs-plugin-datalabels@2.2.0",
-      "destination": "wwwroot/lib/chartjs-plugin-datalabels/"
+      "destination": "wwwroot/lib/chartjs-plugin-datalabels/",
+      "files": [ "chartjs-plugin-datalabels.min.js" ]
     }
   ]
 }
