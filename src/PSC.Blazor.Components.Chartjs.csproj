@@ -2,12 +2,8 @@
 
   <PropertyGroup>
     <TargetFramework>net7.0</TargetFramework>
-    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <Description>ChartJs component for Blazor. Compatible with client-side and server-side Blazor applications.</Description>
-    <PackageIcon>psc_logo.png</PackageIcon>
-    <ApplicationIcon>psc_ico.ico</ApplicationIcon>
-    <PackageReadmeFile>README.md</PackageReadmeFile>
-    <PackageReleaseNotes>Add GroupYAxis - Minor bugs</PackageReleaseNotes>
+    <PackageReadmeFile>README.md</PackageReadmeFile>    
     <PackAsTool>False</PackAsTool>
     <Copyright>Enrico Rossini - PureSourceCode.com</Copyright>
     <RepositoryType>git</RepositoryType>
@@ -15,8 +11,7 @@
     <PackageProjectUrl>https://www.puresourcecode.com/dotnet/blazor/blazor-component-for-chartjs/</PackageProjectUrl>
     <RepositoryUrl>https://github.com/erossini/BlazorChartjs</RepositoryUrl>
     <Title>ChartJs component for Blazor</Title>
-    <PackageLicenseFile>LICENSE</PackageLicenseFile>
-    <GenerateDocumentationFile>True</GenerateDocumentationFile>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>    
   </PropertyGroup>
 
   <ItemGroup>
