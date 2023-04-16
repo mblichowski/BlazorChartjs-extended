@@ -217,7 +217,7 @@ namespace PSC.Blazor.Components.Chartjs
 		public static async Task<ValueTask> OnLegendClickAsync(DotNetObjectReference<IChartConfig> config, LegendClickContext ctx)
 		{
 			if (config.Value.Options is Options options && options?.Plugins?.Legend?.OnClickAsync != null)
-				return options.Plugins.Legend.OnClickAsync(ctx);
+				return options.Plugins.Legend.OnClickAsync(ctx with { ChartId = config.Value.GetChartId() });
 			else
 				return ValueTask.CompletedTask;
 		}
