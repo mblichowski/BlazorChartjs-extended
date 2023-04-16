@@ -2,16 +2,18 @@
 
   <PropertyGroup>
     <TargetFramework>net7.0</TargetFramework>
-    <Description>ChartJs component for Blazor. Compatible with client-side and server-side Blazor applications.</Description>
+    <Description>ChartJs component for Blazor. Compatible with client-side and server-side Blazor applications. Fork by mblichowski, original repository by Enrico Rossini - PureSourceCode.com</Description>
     <PackageReadmeFile>README.md</PackageReadmeFile>    
     <PackAsTool>False</PackAsTool>
     <Copyright>Enrico Rossini - PureSourceCode.com</Copyright>
     <RepositoryType>git</RepositoryType>
     <PackageTags>chartjs, blazor, c#, blazor-webassembly, blazor-server, blazor-component, wasm, asp.net</PackageTags>
     <PackageProjectUrl>https://www.puresourcecode.com/dotnet/blazor/blazor-component-for-chartjs/</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/erossini/BlazorChartjs</RepositoryUrl>
+    <RepositoryUrl>https://github.com/mblichowski/BlazorChartjs-extended</RepositoryUrl>
     <Title>ChartJs component for Blazor</Title>
-    <PackageLicenseFile>LICENSE</PackageLicenseFile>    
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <Version>1.0.0</Version>
+    <PackageId>$(AssemblyName)-mblichowski</PackageId>    
   </PropertyGroup>
 
   <ItemGroup>
