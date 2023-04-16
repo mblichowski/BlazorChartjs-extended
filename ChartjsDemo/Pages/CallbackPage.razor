@@ -224,7 +224,7 @@ private ValueTask onHoverAsync(HoverContext ctx)
 
     private ValueTask onHoverAsync(HoverContext ctx)
     {
-        HoverString = $"DataX: {ctx.DataX} - DataY: {ctx.DataY}";
+        HoverString = ctx.ToString();
         StateHasChanged();
 
         return ValueTask.CompletedTask;
