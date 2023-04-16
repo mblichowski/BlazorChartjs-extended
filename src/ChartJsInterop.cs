@@ -5,30 +5,26 @@ namespace PSC.Blazor.Components.Chartjs
 {
 	public class ChartJsInterop
 	{
-		private readonly Lazy<Task<IJSObjectReference>> moduleTask;
+		private readonly IJSObjectReference _module;
 
-		public ChartJsInterop(IJSRuntime jsRuntime)
+		public ChartJsInterop(IJSObjectReference module)
 		{
-			moduleTask = new(() => jsRuntime.InvokeAsync<IJSObjectReference>("import",
-				"./_content/PSC.Blazor.Components.Chartjs-extended/Chart.js").AsTask());
+			_module = module;
 		}
 
 		public async ValueTask Setup(DotNetObjectReference<IChartConfig> dotNetObjectRef, IChartConfig Config)
 		{
-			var module = await moduleTask.Value;
-			await module.InvokeVoidAsync("chartSetup", Config.CanvasId, dotNetObjectRef, Config);
+			await _module.InvokeVoidAsync("chartSetup", Config.CanvasId, dotNetObjectRef, Config);
 		}
 
 		public async ValueTask AddData(string CanvasId, List<string> labels, int datasetIndex, List<decimal?> data)
 		{
-			var module = await moduleTask.Value;
-			await module.InvokeVoidAsync("addData", CanvasId, labels, datasetIndex, data);
+			await _module.InvokeVoidAsync("addData", CanvasId, labels, datasetIndex, data);
 		}
 
 		public async ValueTask AddNewDataset<T>(string CanvasId, T dataset) where T : class
 		{
-			var module = await moduleTask.Value;
-			await module.InvokeVoidAsync("addNewDataset", CanvasId, dataset);
+			await _module.InvokeVoidAsync("addNewDataset", CanvasId, dataset);
 		}
 	}
 }
