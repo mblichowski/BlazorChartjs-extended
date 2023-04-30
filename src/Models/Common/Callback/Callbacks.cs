@@ -40,5 +40,14 @@
         /// <value>The title.</value>
         [JsonIgnore]
         public Func<CallbackGenericContext, string[]>? Title { get; set; }
+
+        /// <summary>
+        /// If set, the callback title and label functions will be ignored.
+        /// </summary>
+        [JsonInclude]
+        public string? ConstText { get; set; }
+
+        [JsonInclude]
+        public bool HasConstText => !string.IsNullOrEmpty(ConstText);
     }
 }
