@@ -12,7 +12,7 @@
     <RepositoryUrl>https://github.com/mblichowski/BlazorChartjs-extended</RepositoryUrl>
     <Title>ChartJs component for Blazor</Title>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
-    <Version>6.0.40.7</Version>
+    <Version>6.0.40.10</Version>
     <PackageId>$(AssemblyName)-extended</PackageId>    
   </PropertyGroup>
 

@@ -14,5 +14,8 @@
         [JsonPropertyName("callbacks")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public Callbacks? Callbacks { get; set; }
+
+        [JsonInclude]
+        public bool Enabled { get; set; } = true;
     }
 }

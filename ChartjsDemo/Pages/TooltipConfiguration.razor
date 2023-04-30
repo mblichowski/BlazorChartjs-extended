@@ -1,0 +1,51 @@
+﻿@page "/tooltipConfiguration"
+
+<h3>Tooltip configuration</h3>
+<h4>New options available:</h4>
+<ul>
+    <li>Enabled</li>
+</ul>
+
+<Chart Config="_config1" @ref="_chart1" Height="400px"></Chart>
+
+@code {
+    private DoughnutChartConfig? _config1;
+    private Chart? _chart1;
+
+    protected override void OnInitialized()
+    {
+        _config1 = new DoughnutChartConfig()
+            {
+                Options = new Options()
+                {
+                    Responsive = true,
+                    MaintainAspectRatio = false,
+                    Plugins = new Plugins()
+                    {
+                        Legend = new Legend()
+                        {
+                            Display = true,
+                            Position = LegendPosition.Left
+                        },
+                        Tooltip = new Tooltip()
+                        {
+                            Enabled = true,
+                            Callbacks = new Callbacks()
+                            {
+                                ConstText = "const tooltip text"
+                            }
+                        }
+                    }
+                }
+            };
+
+        _config1.Data.Labels = PieDataExamples.SimplePieText;
+        _config1.Data.Datasets.Add(new DoughnutDataset()
+            {
+                Label = "My First Dataset",
+                Data = PieDataExamples.SimplePie.ToList(),
+                BackgroundColor = Colors.PaletteBorder1,
+                HoverOffset = 4
+            });
+    }
+}

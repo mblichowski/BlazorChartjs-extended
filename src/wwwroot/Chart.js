@@ -51,36 +51,44 @@ export function chartSetup(id, dotnetConfig, jsonConfig) {
 
     var context2d = document.getElementById(id).getContext('2d');
     let config = eval(jsonConfig);
-    if (config?.options?.plugins?.tooltip?.callbacks?.hasLabel) {
-        config.options.plugins.tooltip.callbacks.hasLabel = undefined;
-        config.options.plugins.tooltip.callbacks.label = function (ctx) {
-            var dsIndex = -1;
-            var dIndex = -1;
-            var vl = 0;
-            if (ctx.datasetIndex >= 0 && ctx.dataIndex >= 0) {
-                dsIndex = ctx.datasetIndex;
-                dIndex = ctx.dataIndex;
-                vl = chart.data.datasets[dsIndex].data[dIndex];
-            }
-            return DotNet.invokeMethod('PSC.Blazor.Components.Chartjs', 'TooltipCallbacksLabel',
-                dotnetConfig, [dsIndex, dIndex, vl]);
-        };
-    }
 
-    if (config?.options?.plugins?.tooltip?.callbacks?.hasCustomTitle) {
-        config.options.plugins.tooltip.callbacks.hasCustomTitle = undefined;
-        config.options.plugins.tooltip.callbacks.title = function (ctx) {
-            var dsIndex = -1;
-            var dIndex = -1;
-            var vl = 0;
-            if (ctx[0].datasetIndex >= 0 && ctx[0].dataIndex >= 0) {
-                dsIndex = ctx[0].datasetIndex;
-                dIndex = ctx[0].dataIndex;
-                vl = chart.data.datasets[dsIndex].data[dIndex];
-            }
-            return DotNet.invokeMethod('PSC.Blazor.Components.Chartjs', 'TitleCallbacks',
-                dotnetConfig, [dsIndex, dIndex, vl]);
-        };
+    if (config?.options?.plugins?.tooltip?.callbacks?.hasConstText) {
+        config.options.plugins.tooltip.callbacks.title = function (ctx) { return null; }
+        config.options.plugins.tooltip.callbacks.label = function (ctx) { return null; }
+        config.options.plugins.tooltip.callbacks.footer = function (ctx) { return config.options.plugins.tooltip.callbacks.constText; }
+    }
+    else {
+        if (config?.options?.plugins?.tooltip?.callbacks?.hasLabel) {
+            config.options.plugins.tooltip.callbacks.hasLabel = undefined;
+            config.options.plugins.tooltip.callbacks.label = function (ctx) {
+                var dsIndex = -1;
+                var dIndex = -1;
+                var vl = 0;
+                if (ctx.datasetIndex >= 0 && ctx.dataIndex >= 0) {
+                    dsIndex = ctx.datasetIndex;
+                    dIndex = ctx.dataIndex;
+                    vl = chart.data.datasets[dsIndex].data[dIndex];
+                }
+                return DotNet.invokeMethod('PSC.Blazor.Components.Chartjs', 'TooltipCallbacksLabel',
+                    dotnetConfig, [dsIndex, dIndex, vl]);
+            };
+        }
+
+        if (config?.options?.plugins?.tooltip?.callbacks?.hasCustomTitle) {
+            config.options.plugins.tooltip.callbacks.hasCustomTitle = undefined;
+            config.options.plugins.tooltip.callbacks.title = function (ctx) {
+                var dsIndex = -1;
+                var dIndex = -1;
+                var vl = 0;
+                if (ctx[0].datasetIndex >= 0 && ctx[0].dataIndex >= 0) {
+                    dsIndex = ctx[0].datasetIndex;
+                    dIndex = ctx[0].dataIndex;
+                    vl = chart.data.datasets[dsIndex].data[dIndex];
+                }
+                return DotNet.invokeMethod('PSC.Blazor.Components.Chartjs', 'TitleCallbacks',
+                    dotnetConfig, [dsIndex, dIndex, vl]);
+            };
+        }
     }
 
     let crosshair_plugin = config?.options?.plugins?.crosshair;
