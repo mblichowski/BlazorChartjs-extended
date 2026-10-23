@@ -17,6 +17,11 @@ namespace PSC.Blazor.Components.Chartjs
 			await _module.InvokeVoidAsync("chartSetup", Config.CanvasId, dotNetObjectRef, Config);
 		}
 
+		public async ValueTask ClearData(string CanvasId)
+		{
+			await _module.InvokeVoidAsync("clearData", CanvasId);
+		}
+
 		public async ValueTask AddData(string CanvasId, List<string> labels, int datasetIndex, List<decimal?> data)
 		{
 			await _module.InvokeVoidAsync("addData", CanvasId, labels, datasetIndex, data);

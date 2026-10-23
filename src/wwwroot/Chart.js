@@ -222,6 +222,13 @@ export function addData(id, label, dataset, data) {
     chart.update();
 }
 
+export function clearData(id) {
+    var chart = Chart.getChart(id);    
+    chart.data.labels.length = 0;
+    chart.data.datasets.length = 0;
+    chart.update();
+}
+
 export function addNewDataset(id, dataset) {
     var chart = Chart.getChart(id);
     chart.data.datasets.push(dataset);
