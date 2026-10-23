@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
 
   <PropertyGroup>
-    <TargetFramework>net7.0</TargetFramework>
+    <TargetFramework>net10.0</TargetFramework>
     <Description>ChartJs component for Blazor. Compatible with client-side and server-side Blazor applications. Fork by mblichowski, original repository by Enrico Rossini - PureSourceCode.com</Description>
     <PackageReadmeFile>README.md</PackageReadmeFile>    
     <PackAsTool>False</PackAsTool>
@@ -12,7 +12,7 @@
     <RepositoryUrl>https://github.com/mblichowski/BlazorChartjs-extended</RepositoryUrl>
     <Title>ChartJs component for Blazor</Title>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
-    <Version>6.0.40.12</Version>
+    <Version>6.0.40.13</Version>
     <PackageId>$(AssemblyName)-extended</PackageId>    
   </PropertyGroup>
 
@@ -32,7 +32,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="7.0.5" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="10.0.13" />
   </ItemGroup>
 
   <ItemGroup>
